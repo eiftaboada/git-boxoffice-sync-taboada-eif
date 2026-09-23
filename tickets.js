@@ -2,16 +2,20 @@ function isValidQuantity(quantity) {
   return quantity > 0 && quantity <= 20;
 }
 
-function calculateTicketPrice(quantity, basePrice, seating = 'standard') {
+function calculateTicketPrice(quantity, basePrice, seatingType = 'standard') {
+  
   let price = Math.round(quantity * basePrice);
+
+  
+  if (seatingType === 'premium') {
+    price *= 1.50;
+  }
+
 
   if (quantity >= 5) {
     price *= 0.90;
   }
 
-  if (seating === 'premium') {
-    price *= 1.50;
-  }
 
   price -= 10;
 
