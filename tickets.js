@@ -3,7 +3,13 @@ function isValidQuantity(quantity) {
 }
 
 function calculateTicketPrice(quantity, basePrice) {
-  return Math.floor(quantity * basePrice);
+  let price = Math.floor(quantity * basePrice);
+
+  if (quantity >= 5) {
+    price *= 0.90;
+  }
+
+  return price;
 }
 
 module.exports = { isValidQuantity, calculateTicketPrice };

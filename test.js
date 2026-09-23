@@ -1,5 +1,8 @@
 const tickets = require('./tickets');
 
+const groupPrice = tickets.calculateTicketPrice(5, 20);
+assertEqual(groupPrice, 90, '10% group discount for 5 tickets');
+
 let failures = 0;
 function assertEqual(actual, expected, label) {
   if (actual !== expected) {
